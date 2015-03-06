@@ -11,6 +11,19 @@
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
 
+    <div ng-init="urls = []"></div>
+
+    <div>
+      <input ng-model="newUrl">
+      <button ng-click="urls.push({url: newUrl, visits: 0}); newUrl = ''">Shorten</button>
+    </div>
+
+    <div>
+      <ul>
+        <li ng-repeat="link in urls" ng-click="link.visits = link.visits + 1">{{ link.url }} | {{ link.visits }}</li>
+      </ul>
+    </div>
+
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
 
