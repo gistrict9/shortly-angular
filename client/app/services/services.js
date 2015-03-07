@@ -15,14 +15,19 @@ angular.module('shortly.services', [])
 })
 .factory('Shorten', function ($http) {
   var shortenLink = function(link) {
+    console.log(link);
+
     return $http({
       method: 'POST',
       url: '/api/links',
-      data: link
+      data: {url: link}
     })
     .then(function (resp) {
       return resp.data;
-    });
+    })
+    // .then(function(something) {
+    //   //something ===
+    // })
   };
 
   return {
