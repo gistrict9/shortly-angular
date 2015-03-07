@@ -5,8 +5,7 @@ angular.module('shortly.shorten', [])
   $scope.shortenLink = function(link) {
     Shorten.shortenLink(link)
     .then(function(link){
-      console.log(link);
-      $scope.link = link;
+      $scope.submittedLink = link;
     });
   }
 
