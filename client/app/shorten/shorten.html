@@ -6,8 +6,12 @@
       <li><a href="#/shorten">Shorten</a></li>
     </ul>
   </div>
-  <form>
-    <input type="text" ng-model="link">
+  <form name="shortenForm">
+    <input type="url" name="shortenField" ng-model="link" required>
+    <span ng-show="shortenForm.shortenField.$error.required">
+      Required!</span>
+    <span ng-show="shortenForm.shortenField.$error.url">
+      Not valid url!</span>
     <button ng-click="shortenLink(link); link=''">Shorten</button>
   </form>
   <div class="link">

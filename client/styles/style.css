@@ -99,7 +99,7 @@ form {
 
 input {
   width: 360px;
-  display: block;
+  display: inline-block;
   font-size: 13px;
   padding: 5px;
   margin-bottom: 5px;
@@ -144,5 +144,9 @@ input[type=url]:focus {
 
 .creator .message {
   clear: both;
+}
+
+button {
+  display: block;
 }
 
